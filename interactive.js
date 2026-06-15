@@ -1,14 +1,25 @@
-let CatData = []
+let CatData = [
+    { "id": 0, "name": "Hamısı"},
+    { "id": 1, "name": "Maus"},
+    { "id": 2, "name": "Klaviatura"},
+    { "id": 3, "name": "Fləşyaddaş"},
+    { "id": 4, "name": "Sistem Bloku"},
+    { "id": 5, "name": "Monitor"},
+    { "id": 6, "name": "Audio"},
+    { "id": 7, "name": "Veb-Kamera"},
+    { "id": 8, "name": "Daxili Yaddaş"},
+    { "id": 9, "name": "Aksesuar"}
+  ]
 
 let Base_data = 'https://69c53df08a5b6e2dec2c09e9.mockapi.io/hub_products'
 let cat_data = 'https://69c53df08a5b6e2dec2c09e9.mockapi.io/hub_categories'
 let categories = document.getElementById('categories-part')
 
-async function getCat() {
-    const res = await fetch(cat_data)
-    CatData = await res.json()
-    renderCat()
-}
+// async function getCat() {
+//     const res = await fetch(cat_data)
+//     CatData = await res.json()
+//     renderCat()
+// }
 function renderCat(){
     categories.innerHTML = CatData.map(item => `
         <div 
@@ -17,7 +28,8 @@ function renderCat(){
         ${item.name}
       </div>`).join('')
     } 
-getCat()
+// getCat()
+renderCat()
 
 // ---------------------------------------Products-------------------------------------
 let products = document.getElementById('products-part')
